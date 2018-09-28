@@ -1,0 +1,5 @@
+----- Introduction PHP -----
+PHP : Hypertext Preprocessor = langage de programmation de script, open source, spécifiquement conçu pour le développement des sites internet.
+langages de conception (front-end): HTML, CSS, JS / langage fonctionnels : PHP, SQL.
+PHP: 1- récupère les données saisies; 2- traitement des données
+Un site dit dynamique contient une BDD, une page back(back-office) pour l'administrateur et une page front pour l'utilisateur.
