@@ -14,9 +14,9 @@ $choisir = '';
 
     if (empty($_GET['clique']) && $_GET['clique'] == 'choisir'){
         echo $_GET;
-    } else (!empty($_GET['clique']) && $_GET['clique'] == 'choisir'){
-        
-    }
+    } else (!empty($_GET['clique']) && $_GET['clique'] == 'choisirRome'){
+        $choisir = '?clique=choisirRome'
+    } 
 
     // condition : if $_GET is empty : afficher "accueil"(<div class="container">), sinon, afficher "le code html correspondant".
 
@@ -36,6 +36,9 @@ $choisir = '';
 </head>
 <body>
 
+    <?php
+    echo $choisir;
+    ?>
     
     <!-- Contenu -->
     <div class="container">
@@ -52,7 +55,7 @@ $choisir = '';
                 <div class="card-body">
                     <h5 class="card-title font-weight-bold">Formule Rome</h5>
                         <p class="card-text">Tomates buratina<br>Rizotto aux asperges<br>Panna cotta</p>
-                    <a href="?clique=choisir" class="btn btn-info w-100">Choisir</a>
+                    <a href="?clique=choisirRome" class="btn btn-info w-100">Choisir</a>
                 </div>
             </div>
     
@@ -63,7 +66,7 @@ $choisir = '';
                 <div class="card-body">
                     <h5 class="card-title font-weight-bold">Formule New-York</h5>
                         <p class="card-text">César salade<br>Cheese burger<br>Cheesecake</p>
-                    <a href="?clique=choisir" class="btn btn-danger w-100">Choisir</a>
+                    <a href="?clique=choisirNewYork" class="btn btn-danger w-100">Choisir</a>
                 </div>
             </div>
         </div>
@@ -77,7 +80,7 @@ $choisir = '';
                 <div class="card-body">
                     <h5 class="card-title font-weight-bold">Formule Delhi</h5>
                         <p class="card-text">Poppadoms<br>Agneau byriani<br>Lassi mangue</p>
-                    <a href="?clique=choisirRome" class="btn btn-warning w-100">Choisir</a>
+                    <a href="?clique=choisirDelhi" class="btn btn-warning w-100">Choisir</a>
                 </div>
             </div>
     
@@ -88,7 +91,7 @@ $choisir = '';
                 <div class="card-body">
                     <h5 class="card-title font-weight-bold">Formule Hanoï</h5>
                         <p class="card-text">Nems aux crevettes<br>Poulet saté<br>Perles de coco</p>
-                    <a href="?clique=choisir" class="btn btn-primary w-100">Choisir</a>
+                    <a href="?clique=choisirHanoi" class="btn btn-primary w-100">Choisir</a>
                 </div>
             </div>            
         </div>
@@ -107,7 +110,7 @@ $choisir = '';
                     <h5 class="card-title">Votre formule Rome arrive dans quelques instants... <i class="fas fa-kiwi-bird"></i></h5>
                     <p class="card-text">Nous vous souhaitons une bonne dégustation.<br>Un café gourmand vous est proposé pour terminer votre pause gourmande en douceur.</p>
                     <p>Votre facture sera de 25€</p>
-                    <a href="#" class="btn btn-success w-75">Choisir un autre menu</a>
+                    <a href="$_GET" class="btn btn-success w-75">Choisir un autre menu</a>
                 </div>
                 </div>
             </div>
