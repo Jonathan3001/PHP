@@ -280,7 +280,7 @@ if (isset($var2)) echo 'existe et non NULL <br>'; // La condition est vraie car 
 // L'opérateur NOT écrit "!" :
 $var3 = 'une chaine de caractères';
 
-if (!empty($var3)) echo '$var3 n\'est pas vide <br>'; // ! pou NOT. Il s'agit d'une négation qui transforme false en true et inversement (!false vaut true et !true vaut false).
+if (!empty($var3)) echo '$var3 n\'est pas vide <br>'; // ! pour NOT. Il s'agit d'une négation qui transforme false en true et inversement (!false vaut true et !true vaut false).
 // Littéralement, on teste ici si $var3 n'est pas vide.
 
 // --------

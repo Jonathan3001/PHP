@@ -1,0 +1,48 @@
+body{
+    background-color: #a9f0d1;
+}
+
+header{
+    font-family: 'Srisakdi', cursive;
+    text-align-last: left;
+    margin-bottom: 10vh;
+    display: flex;
+}
+
+i{
+    color: #6c9986;
+    height: 20px;
+}
+
+h1{
+
+}
+
+.container{
+    background-image: url(../img/bg.jpg);
+    border: 1px;
+    width: 80%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    /* text-align: center; */
+    padding-top: 10vh;
+    padding-bottom: 10vh;
+}
+
+.card{
+    margin-bottom: 10vh;
+}
+
+h5{
+    font-family: 'Srisakdi', cursive;    
+}
+
+.card-header{
+    background-color: #a9f0d1;
+    font-family: 'Srisakdi', cursive;
+}
+
+footer{
+    display: flex;
+}
