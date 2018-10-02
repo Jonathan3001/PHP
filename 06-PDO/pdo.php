@@ -281,3 +281,34 @@ $nom = 'durand';
 $resultat->execute();
 $donnees = $resultat->fetch(PDO::FETCH_ASSOC);
 debug($donnees); // on continue d'accèder aux valeurs de "thoyer" si on ne refait pas notre bindValue().
+
+
+// --------------------------------------------------
+echo '<h3> 10 - requête préparée et points complémentaires </h3>';
+// --------------------------------------------------
+
+echo '<h4>Le marqueur "?" </h4>';
+
+$resultat = $pdo->prepare("SELECT * FROM employes WHERE nom = ? AND prenom = ? ");
+// On prépare la requête avec les parties variables représentées par des marqueurs sous forme de "?"
+
+$resultat->bindValue(1, 'durand'); // Le chiffre 1 représente le premier marqueur "?" de la requête
+$resultat->bindValue(2, 'damien'); // Le chiffre 2 représente le second
+
+$resultat->execute();
+
+// On peut aussi utiliser cette syntaxe directement :
+$resultat->execute(array('durand', 'damien')); // on peut remplacer les 2 bindValue() et le execute() précédents par cette ligne, en passant un array à la méthode execute(). Les valeurs sont dans le même ordre que les marqueurs dans la requête.
+
+$donnees = $resultat->fetch(PDO::FETCH_ASSOC);
+debug($donnees);
+
+// -----
+echo '<h4>execute() sans bindParam ni bindValue()</h4>';
+
+$resultat = $pdo->prepare("SELECT * FROM employes WHERE nom = :nom AND prenom = :prenom ");
+
+$resultat->execute(array(':nom' => 'chevel', ':prenom' => 'daniel')); // on associe les marqueurs à leur valeur directement dans un array passé à la méthode execute()
+
+$donnees = $resultat->fetch(PDO::FETCH_ASSOC);
+debug($donnees);
