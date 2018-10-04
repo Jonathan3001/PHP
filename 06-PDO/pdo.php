@@ -312,3 +312,16 @@ $resultat->execute(array(':nom' => 'chevel', ':prenom' => 'daniel')); // on asso
 
 $donnees = $resultat->fetch(PDO::FETCH_ASSOC);
 debug($donnees);
+
+
+// --------------------------------------------------
+echo '<h3> 11 - L\'extension Mysqli </h3>';
+// --------------------------------------------------
+
+// Connexion à la BDD :
+$mysqli = new Mysqli('localhost', 'root', '', 'societe');
+
+// exemple de requête :
+$resultat = $mysqli->query("SELECT * FROM employes");
+
+// ------------ FIN DU FICHIER ------------------
