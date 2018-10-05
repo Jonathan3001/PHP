@@ -9,6 +9,15 @@ if (isset($_GET['action']) && $_GET['action'] == 'deconnexion'){ // Si on reçoi
 
 }
 
+// 3 - L'internaute connecté est redirigé vers son profil : il n'y a pas de raison qu'il puisse se reconnecter une seconde fois :
+
+if (internauteEstConnecte()){
+    header('location:profil.php');
+    exit();
+}
+
+
+
 // 1 - Traitement du formulaire de connexion :
     // debug($_POST);
 
