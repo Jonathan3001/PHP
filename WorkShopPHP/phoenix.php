@@ -204,7 +204,7 @@
 </div> --> <!-- Fin .container -->
 
 <div class="container mt-4">
-    <section>
+    <div class="row">
         <div class="row col-md-4">
             <div class="card border border-info" style="width: 18rem;">
                 <img class="card-img-top" src="img/caraibes_martinique_boucaniers.jpg" alt="Card image cap">
@@ -215,7 +215,7 @@
             </div>
         </div> <!-- Fin .row col-md-4 --> 
 
-        <div class="card col-md-8 border border-info">
+        <div class="card col-md-8 border border-info p-0">
             <form action="">
                 <div class="card-header bg-info">
                         Je complète mes informations
@@ -226,21 +226,34 @@
                         <div class="form-group">
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email de confirmation">
                 </div> <!-- Fin .row -->
-                <div class="row col-md-8">
-                    </div>
-                        <div class="form-group">
-                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Je pars combien de semaines ?">
+
+                <div class="col-md-6">
+                    <div class="form-row">
+                        <div class="col">
+                        <input type="text" class="form-control" placeholder="Je pars combien de semaines ?">
                         </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Nombre de vacanciers">
-                    </div> 
-                </div> <!-- Fin .row col-md-8 -->
+                        <div class="col">
+                        <input type="text" class="form-control" placeholder="Nombre de vacanciers">
+                        </div>
+                    </div> <!-- Fin form-row -->
+                </div> <!-- Fin col-md-8 -->
                 </div> <!-- Fin .card-header -->
                     <button type="submit" class="btn btn-info w-75 col-8 offset-2">Confirmer ma réservation</button>
             </form>
         </div> <!-- Fin .card col-md-8 -->   
-    </section> 
+    </div> <!-- Fin .row -->
 </div> <!-- Fin .container mt-4 -->
+
+<!-- <form>
+  <div class="form-row">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Je pars combien de semaines ?">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Nombre de vacanciers">
+    </div>
+  </div>
+</form> -->
 
 
 </body>
