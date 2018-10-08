@@ -1,11 +1,13 @@
 <?php
 require_once 'inc/init.inc.php';
 
+$message_deconnexion = '';
+
 // 2 - Deconnexion de l'internaute :
 if (isset($_GET['action']) && $_GET['action'] == 'deconnexion'){ // Si on reçoit en $_GET dans l'url l'indice "action" et la valeur "deconnexion", c'est que l'internaute veut se deconnecter
     unset($_SESSION['membre']); // On supprime les informations du membre dans la session
     
-    $contenu .= '<div class="alert alert-info">Vous avez été déconnecté.</div>';
+    $message_deconnexion .= '<div class="alert alert-info">Vous avez été déconnecté.</div>';
 
 }
 
@@ -15,8 +17,6 @@ if (internauteEstConnecte()){
     header('location:profil.php');
     exit();
 }
-
-
 
 // 1 - Traitement du formulaire de connexion :
     // debug($_POST);
@@ -62,6 +62,9 @@ if (internauteEstConnecte()){
 require_once 'inc/haut.inc.php';
 ?>
 <h1 class="mt-4">Connexion</h1>
+
+<?php echo $message_deconnexion; ?>
+
 <p>Veuillez indiquer vos identifiants pour vous connecter.</p>
 
 <?php echo $contenu; ?>
