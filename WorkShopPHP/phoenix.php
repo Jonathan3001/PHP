@@ -1,8 +1,5 @@
 <?php
 require_once 'inc/init.inc.php';
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -51,15 +48,15 @@ require_once 'inc/init.inc.php';
         <nav class="nav bg-muted fixed-top p-5">
             <i class="fab fa-phoenix-framework fa-2x ml-5" href="http://localhost/PHP/WorkShopPHP/phoenix.php"></i>
             <a class="nav-link active text-dark" href="#">Phoenix</a>
-            <a class="nav-link text-black-50" href="<?php echo $voyage;?>">Choisir une destination</a>
-            <a class="nav-link disabled text-muted" href="<?php echo $confirmation;?>">Payer</a>
+            <a class="nav-link text-black-50" href="?action=choisir">Choisir une destination</a>
+            <a class="nav-link disabled text-muted" href="?action=confirmation">Payer</a>
         </nav>
     </div>
 
     <!-- CAROUSSEL -->
 
     <?php
-    if (isset($_GET['action']) && $_GET['action'] == 'modification'){
+    if ($_GET){
     ?>
     <div id="carouselExampleControls" class="h-25 d-inline-block" data-ride="carousel">
         <div class="carousel-inner">
@@ -102,7 +99,7 @@ require_once 'inc/init.inc.php';
     </div>
 
 <?php
-    } elseif (isset($_GET['action'] && ($_GET['action'] == 'choisir'){    
+    } elseif ($_GET['action'] == 'choisir'){            
 ?>
 
 <!-- _-_-_-_-_-_-_-_- PAGE CHOIX SEJOUR -_-_-_-_-_-_-_-_ -->
@@ -112,8 +109,8 @@ require_once 'inc/init.inc.php';
     <nav class="nav bg-info col-12 p-3">
         <i class="fab fa-phoenix-framework fa-2x ml-5" href="http://localhost/PHP/WorkShopPHP/phoenix.php"></i>
         <a class="nav-link active text-dark" href="#">Phoenix</a>
-        <a class="nav-link text-black-50" href="#">Choisir une destination</a>
-        <a class="nav-link disabled text-muted" href="#">Payer</a>
+        <a class="nav-link text-black-50" href="?action=choisir">Choisir une destination</a>
+        <a class="nav-link disabled text-muted" href="?action=confirmation">Payer</a>
     </nav>
 
     <div class="container">
@@ -161,7 +158,7 @@ require_once 'inc/init.inc.php';
                     <div class="card-body">
                         <h5 class="card-title">Kamarina</h5>
                         <p class="card-text">Bienvenue au pays de l'Etna où ruelles escarpées et places en fleurs s'ouvrent sur la Méditerranées !</p>
-                        <a href="#" class="btn btn-outline-info">Réserver maintenant !</a>
+                        <a href="?action=reservation" class="btn btn-outline-info">Réserver maintenant !</a>
                     </div>
                 </div> <!-- Fin .card-border -->
                 <div class="card border border-info mb-5" style="width: 18rem;">
@@ -169,7 +166,7 @@ require_once 'inc/init.inc.php';
                     <div class="card-body">
                         <h5 class="card-title">Finohlu</h5>
                         <p class="card-text">Instants inoubliables sur une île privative où luxe et charme naturel des Maldives s'équilibrent à merveille.</p>
-                        <a href="#" class="btn btn-outline-info">Réserver maintenant !</a>
+                        <a href="?action=reservation" class="btn btn-outline-info">Réserver maintenant !</a>
                     </div>
                 </div> <!-- Fin .card-border -->      
             </div> <!-- Fin .row -->
@@ -180,7 +177,7 @@ require_once 'inc/init.inc.php';
                     <div class="card-body">
                         <h5 class="card-title">Albion sauvage</h5>
                         <p class="card-text">Au coeur de l'île, un swing au golf, l'adrénaline du trapèze volant ou la beauté des fonds marins... que choisir?</p>
-                        <a href="#" class="btn btn-outline-info">Réserver maintenant !</a>
+                        <a href="?action=reservation" class="btn btn-outline-info">Réserver maintenant !</a>
                     </div>
                 </div> <!-- Fin .card-border -->
                 <div class="card border border-info mr-4" style="width: 18rem;">
@@ -188,7 +185,7 @@ require_once 'inc/init.inc.php';
                     <div class="card-body">
                         <h5 class="card-title">Kani</h5>
                         <p class="card-text">Ile-jardin posées sur des eaux turquoises, découvrez le paradis au coeur de l'archipel des Maldives.</p>
-                        <a href="#" class="btn btn-outline-info">Réserver maintenant !</a>
+                        <a href="?action=reservation" class="btn btn-outline-info">Réserver maintenant !</a>
                     </div>
                 </div> <!-- Fin .card-border -->
                 <div class="card border border-info" style="width: 18rem;">
@@ -196,7 +193,7 @@ require_once 'inc/init.inc.php';
                     <div class="card-body">
                         <h5 class="card-title">Gregolimano</h5>
                         <p class="card-text">L'île d'Eubée est une oasis entre mer et oliviers... plongez dans les eaux azures de la mer Egée... en ski nautique</p>
-                        <a href="#" class="btn btn-outline-info">Réserver maintenant !</a>
+                        <a href="?action=reservation" class="btn btn-outline-info">Réserver maintenant !</a>
                     </div>
                 </div> <!-- Fin .card-border -->       
             </div> <!-- Fin .row -->   
@@ -205,7 +202,7 @@ require_once 'inc/init.inc.php';
 
 
     <?php
-    } elseif (isset($_GET['action']) && ($_GET['action'] == 'reservation'){
+    } elseif ($_GET['action'] == 'reservation'){
 
     ?>
     <!-- _-_-_-_-_-_-_-_- PAGE RESERVATION BOUCANIER -_-_-_-_-_-_-_-_ -->
@@ -246,14 +243,14 @@ require_once 'inc/init.inc.php';
                             </div>
                         </div> <!-- Fin form-row -->
                     </div> <!-- Fin .col -->
-                        <button type="submit" class="btn btn-info w-75 col-8 offset-2 mt-4">Confirmer ma réservation</button>
+                        <button type="submit" class="btn btn-info w-75 col-8 offset-2 mt-4" href="?action=confirmation">Confirmer ma réservation</button>
                 </form>
             </div> <!-- Fin .card col-md-8 -->   
         </div> <!-- Fin .row -->
 
         <div class="card-deck mt-5">
             <div class="card p-2" style="width: 18rem;">
-                <img class="card-img-top" src="img/caraibes_martinique_boucaniers.jpg" alt="Card image cap" style="max-height: 10vh;">
+                <img class="card-img-top" src="img/caraibes_martinique_boucaniers.jpg" alt="Card image cap" style="max-height: 10vh;" href="?action=reservation">
             </div>
             <div class="card p-2" style="width: 18rem;">
                 <img class="card-img-top" src="img/sicile_kamarina.jpg" alt="Card image cap" style="max-height: 10vh;">
